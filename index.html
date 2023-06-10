@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    
+    
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAaRJREFUSEvt1j9IVlEYx/GPGARh1NASLaHUVkubOLQkYWRjY0RUICRCuhj9oT821JC4NERDo1NBFAUN0RqEaIRITQ3i4FYOFsUD98LtoLznfXlvr4PPcjmX5/y+PL/znD9dOhRdHeLaBv8357eU1TtwGv34UViwD4ews4ElP7GA+Eb8wRxe4ld1blrxUbzAwTZ7/g3D+FzqpuAPGGgztJR7g5MbgQ/ge03QUnY/lmNQrfgE3tYMPo73Kfg8nmaAowd6cSQjN005i9kUfBUPM8Ru4B4uYArR8blxEU9S8C3czFAI8J0iby9uYwTdGXNHMZOCo9qoulFUwWXuYUxXu3YTkYnS1Wpz3cW1RlRcR+RWIw6XRxhqMH8S91u1ugreXVh9JdPqscKZf7bTOB5kVhxNdalY62aa6xyepRVfxuMM8HP0tbidYilep+AzCNE6I+6C+RQcnblYJxW7sJaCY/wRx2qCv8KpUju9nQL6DnvaDP9a3PFfNgPH/x4MYrV4DMSZHLdKM7GCJazjU/EQ+F0V2FJPn2Yqazl3u+KWrWt2Yses/gukJj8f6HDQbQAAAABJRU5ErkJggg=="/>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAe5JREFUSEvt1kuozVEUx/HPjYEkz+KWV5SkxAATrzwiKQORDBQpA4UUZSAGd0ApCZGpibeMJBOFgcREhkwoSZlIeRet2vd077/zP3ufzsmZ3F27/2Cv/fvutfbaa/379Gj09YhrBPzfIt+NUE/AZSzHTPzAOZzGt+TJtPT9NOhZFTwWV7AXfwrcn46nmNPE9gOuYyHGY8VQmyp4G+7gHnYUwO9jc+aAb7ApReNxnccHcSEtPscuvK0RXooXBVF5h35sxYM68Go0ToWfOImL+F6BHML5AvDn5MDDVqEeg68YXRGMJLmLa3iFjziBgQLwGRyr2jXL6v0pS1tpfkHMWQXg4ziVA+/BIizGugLREpPQvJoDb8SwuyhRztjE+36WA8fdRhbP7gIwJOI6JuFvDhzrq9I7ntIF+E3sbKZTVzKjIh3BPozr4ABrKs+zIVUHPoDtWNIB+CWW1R26DrwArzGqA2/X41G74LDfghuIxtHuOIujrTbl2uJURNjXYmUh/Qk24Fcn4GhnkWSHU2vLsSNCu3PQEBnq8eRUsaKZz08zqle8w9yI9xql8VLOcHC9GurI5Kir8woFfuNWikrj76Jkb90dh6fR4OPPYgbmYiKixcV8n4rM7VSdSljDbHLJ1bZg6YYRcGmkOrbrWaj/AVe4TB8KwZmFAAAAAElFTkSuQmCC"/>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAA1tJREFUSEvF1mnIb1MUBvDfpUQiEhdlnu8HJbOIRD5RpsIH5ZYpGTLPypQpM6EoKZKhRAhJZExSpmTInDlDMg89b+tov+ee/1S37vq0zz5r72fttZ41LLCMZMEywjUr8HLYARtj3TL6C3yAV/DvtA+ZFngDnI0DscaIy7/B/bgUn00yYBLwCjgPpyPraeR3XFIG/D3qwDjgdfAQtq/Df+FBPIbX8VHtb4RtsXd5ZPnafxYH4Lsh8FHAce1LWLsOPYVjKpbjXr0lbsHupfQhdkLCME+GgFfDq9ikNOO2c6fxcemEgFfjxPp+Dbvi1/aOIeA7cEQpXYTzB0BzbovyyNd4e0DnRhxX+1fgjHHAm+Fd5tLsSezTS5FdcCb2xMrNRR/jOlyPjlCJ9YvFkd+wIb7qzvRffBuOLLCtyohO96iK3zhCHoQHGoN2xgv1fSEuGAKOhSHB6pWPBzcXbFdki05eFAI9g2+xTbn0nkq9vtefqxi/j3h0Tlrrw8RcFkmhSOp0ktTYDf8gr0iVaiWE/GEgztk6vkKQ9eZ4rw98OO6sw+vj01qv1cTm5oYwI3CW2E6OJ0si++HhPvCpuLIUUqX+rHUI9XytD8G90yKWXkL3fa1PKhLOc/UpuKoUVsXPtW4tPgyJ5SySu36sA8FIjs8DPhR3l0IqUNIqsgp+qnVYf/QsqFiEt/oea8mV0pa8iyTedzUAT1QtHkWulNYvRxi0GLfXv9T9uXi3wCl1ObwmHsG+zUVx98tIOqVZ3IQwPcQL6Gm4FucMgKcQ7YXPsV5XkPrFIKw9tg5vjTeai6YpIMn99ORO8sIu9a7Byd2PPnAS/J162dNlaTtVpNhnINgDKzUAaZE3FGPbkhmvJCvipbTP/weEofKXeCQukYtHVKOEJQSMq+PCuaLQk9TtFI9IjDqh/T8EnLyLezadAD6CS2JU4t2Bvlk9+ZdJwPkft4ThC0v58Yp9N3WMAk3q3Fq1OTqfYMchxo/rNJkiw+40gcgf1XkeLdKl6KfCxciQKMzNqJMXR9Ic8p1GsoRMGvZWrFaWdOlmqVGv7fYz7GWAuKzpzTMDdwfC9rOwP9KJhiRN/j5cvjTG2z5AXp22mGEwU2hSLQN93J6KtNQH+knunfn/pBjPfOG0B/4DXe6oH3k4WloAAAAASUVORK5CYII="/>
+    <title>Document</title>
+</head>
+<body>
+    <div id="top-nav">
+        <div id="left-navbar">
+            <img src="img/starbuckslogo.png" alt="starbuckslogo">
+            <ul>
+                <li><a href="https://www.starbucks.com/menu" target="_blank">MENU</a></li>
+                <li class="padding-link active-link"><a href="#">REWARDS</a></li>
+                <li class="padding-link"><a href="https://www.starbucks.com/gift" target="_blank">GIFT CARDS</a></li>
+            </ul>
+        </div>
+        <div id="right-navbar">
+            <div id="find-a-store">
+                <img id="location-img" src="img/locationicon.png" alt="locationimage">
+                <p>Find a store</p>
+            </div>
+            <div id="right-navbar-btns">
+                <button id="sign-btn">Sign in</button>
+                <button id="join-btn">Join now</button>
+            </div>
+        </div>
+    </div>
+    <div id="bottom-nav">
+        <div id="bottom-nav-p-box">
+            <p>STARBUCKS<span>&#174;</span> REWARDS</p>
+        </div>
+    </div>
+
+    <main>
+        <section id="first-section">
+            <div id="frst-sctn-box">
+                <div id="frst-sctn-textblock">
+                    <h1>FREE COFFE <br>IS A TAP AWAY</h1>
+                    <p>Join now to start earning Rewards.</p>
+                    <div id="frst-sctn-btn-p">
+                        <button>Join now</button>
+                        <p>Or <a href="https://www.starbucks.com/rewards/mobile-apps/" target="_blank">join in the app</a> for the best experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="second-section">
+            <article>
+                <div id="scd-sctn-title">
+                    <h2>Getting started is easy</h2>
+                    <p>Earn Stars and get rewarded in a few easy steps</p>
+                </div>
+                <div id="scd-sctn-columns">
+                    <div class="scd-sctn-content">
+                        <p><span>1</span></p>
+                        <h3>Create an account</h3>
+                        <p>To get started, <a>join now</a>. You can also <a>join in the app</a> to get access to the full range of Starbucks Rewards benefits.</a></p>
+                    </div>
+                    <div class="scd-sctn-content">
+                        <p><span>2</span></p>
+                        <h3>Order and pay how you'd like</h3>
+                        <p>Use cash, credit/debit card or save some time and pay right through the app. You'll collect Stars all ways. <a>Learn how</a></p>
+                    </div>
+                    <div class="scd-sctn-content">
+                        <p><span>3</span></p>
+                        <h3>Earn Stars, get Rewards</h3>
+                        <p>As you earn Stars, you can redeem them for Rewards - like free food, drinks, and more. Start redeeming with as little as 25 Stars!</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="third-section">
+
+            <h2 class="third-section-tilte">Get your favorites for free</h2>
+
+            <div class="tabs-wrapper">
+                <ul class="tabs">
+                    <li data-tab-target="#first-tab" class="active tab"><span>25</span><span class="star"
+                            aria-hidden="true">★</span></li>
+                    <li data-tab-target="#second-tab" class="tab"><span>100</span><span class="star"
+                            aria-hidden="true">★</span></li>
+                    <li data-tab-target="#third-tab" class="tab"><span>200</span><span class="star"
+                            aria-hidden="true">★</span></li>
+                    <li data-tab-target="#fours-tab" class="tab"><span>300</span><span class="star"
+                            aria-hidden="true">★</span></li>
+                    <li data-tab-target="#fifth-tab" class="tab"><span>400</span><span class="star"
+                            aria-hidden="true">★</span></li>
+                    <li class="tabs-slider"></li>
+                </ul>
+                
+
+                <div class="tab-content">
+
+                    <div id="first-tab" data-tab-content class="active">
+                        <div class="tab-wrapper">
+                            <div class="tab-img"><img 
+                                    src="https://www.starbucks.com/weblx/images/rewards/reward-tiers/025.png" alt="">
+                            </div>
+                            <div class="tab-text">
+                                <h1>Customize your drink</h1>
+                                <p>Make your drink just right with an extra espresso shot, nondairy milk or a dash of
+                                    your favorite syrup.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="second-tab" data-tab-content>
+                        <div class="tab-wrapper">
+                            <div class="tab-img"><img 
+                                    src="https://www.starbucks.com/weblx/images/rewards/reward-tiers/100.png" alt="">
+                            </div>
+                            <div class="tab-text">
+                                <h1>Brewed hot or iced coffee or tea, bakery item, packaged snack and more</h1>
+                                <p>Treat yourself to an iced coffee, buttery croissant, bag of chips and more.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="third-tab" data-tab-content>
+                        <div class="tab-wrapper">
+                            <div class="tab-img"><img 
+                                    src="https://www.starbucks.com/weblx/images/rewards/reward-tiers/200.png" alt="">
+                            </div>
+                            <div class="tab-text">
+                                <h1>Handcrafted drink (Cold Brew, lattes and more) or hot breakfast</h1>
+                                <p>Turn good mornings great with a delicious handcrafted drink of your choice, breakfast
+                                    sandwich or oatmeal on us.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fours-tab" data-tab-content>
+                        <div class="tab-wrapper">
+                            <div class="tab-img"><img 
+                                    src="https://www.starbucks.com/weblx/images/rewards/reward-tiers/300.png" alt="">
+                            </div>
+                            <div class="tab-text">
+                                <h1>Sandwich, protein box or at-home coffee</h1>
+                                <p>Enjoy a PM pick-me-up with a lunch sandwich, protein box or a bag of coffee—including
+                                    Starbucks VIA Instant®.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fifth-tab" data-tab-content>
+                        <div class="tab-wrapper">
+                            <div class="tab-img"><img 
+                                    src="https://www.starbucks.com/weblx/images/rewards/reward-tiers/400.png" alt="">
+                            </div>
+                            <div class="tab-text">
+                                <h1>Select Starbucks® merchandise</h1>
+                                <p>Take home a signature cup, drink tumbler or your choice of coffee merch up to $20.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Begin: Endless -->
+        <div class="Endless">
+            <div class="TopEndless">
+                <div class="EndlessMain">
+                    Endless Extras
+                </div>
+                <div class="EndlessText">
+                    Joining Starbucks® Rewards means unlocking access to exclusive benefits. Say hello to easy ordering,
+                    tasty
+                    Rewards and—yes, free coffee.
+                </div>
+            </div>
+            <div class="EndlessPossibilities">
+                <div class="FCard">
+                    <div class="ImgBlock">
+                        <img class="sb-imageFade__show"
+                            src="https://www.starbucks.com/weblx/images/rewards/benefits/1-fun-freebies.jpg" alt=""
+                            role="presentation" width="112">
+                        <!-- <img class="Breakfast" src="E:\development\Codecool\block2\TeamThree1vers\1-fun-freebies.webp"> -->
+                    </div>
+                    <div class="CardCont">
+                        <div class="CardMain">
+                            Fun freebies
+                        </div>
+                        <div class="CardBody">Not only can you earn free coffee, look forward to a birthday treat plus
+                            coffee and tea refills.</div>
+                        <button class="bttn Lmbutton">Learn more</button>
+                    </div>
+                </div>
+                <div class="SCard">
+                    <div class="ImgBlock">
+                        <img class="sb-imageFade__show"
+                            src="https://www.starbucks.com/weblx/images/rewards/benefits/2-order-and-pay-ahead.jpg" alt=""
+                            role="presentation" width="112">
+                        <!--  <img class="payWithPhone" src="E:\development\Codecool\block2\TeamThree1vers\2-order-and-pay-ahead.webp"> -->
+                    </div>
+                    <div class="CardCont">
+                        <div class="CardMain">Order & pay ahead</div>
+                        <div class="CardBody">Enjoy the convenience of in-store, curbside or drive-thru pickup at select
+                            stores.</div>
+                        <button class="bttn Lmbutton">Learn more</button>
+                    </div>
+                </div>
+                <div class="TCard">
+                    <div class="ImgBlock">
+                        <img class="sb-imageFade__show"
+                            src="https://www.starbucks.com/weblx/images/rewards/benefits/3-get-to-free-faster.jpg" alt=""
+                            role="presentation" width="112">
+                        <!--  <img class="caffeWithCream" src="E:\development\Codecool\block2\TeamThree1vers\3-get-to-free-faster.webp" -->
+                    </div>
+                    <div class="CardCont">
+                        <div class="CardMain">Get to free faster</div>
+                        <div class="CardBody">Earn Stars even quicker with Bonus Star challenges, Double Star Days and
+                            exciting games.</div>
+                        <!-- <button class="Lm">Learn more</button> -->
+                        <button class="bttn Lmbutton">
+                            Learn more
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: Endless -->
+
+            <!--Begin: "Cash or Card"  -->
+        <div class="CashOC">
+            <div class="CashOCMain">
+                Cash or card, you earn Stars
+            </div>
+            <div class="CashOCContent">
+                No matter how you pay, you can earn Stars with your morning coffee. Those Stars add up to (really
+                delicious) Rewards.
+            </div>
+            <div class="COCFlex">
+                <div class="FColumn">
+                    <p class="SStar">
+                        1
+                        <svg class="ImSStar" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            width="24">
+                            <path d="m233-80 93-304L80-560h304l96-320 96 320h304L634-384l93 304-247-188L233-80Z" />
+                        </svg>
+                        per dollar
+                    </p>
+                    <p>Pay as you go</p>
+                </div>
+                <div class="Column">
+                    <div class="Img"> <img class="scan"
+                            src="https://www.starbucks.com/weblx/images/rewards/ways-to-pay/1A.png" height="158"
+                            width="112">
+                    </div>
+                    <!--  <img class="ScanImg" src="E:\development\Codecool\block2\TeamThree1vers\ScanAndPay.png">  -->
+                    <div class="ScanText">
+                        <div class="TextMain">Scan and pay separately</div>
+                        <div class="TextBody">Use cash or credit/debit card at the register</div>
+                    </div>
+                </div>
+                <div class="Column">
+                    <div class="Img"><img class="save"
+                            src="https://www.starbucks.com/weblx/images/rewards/ways-to-pay/1B.png" height="158"
+                            width="112"></div>
+                    <div class="SavePayText">
+                        <div class="TextMain">Save payment in the app</div>
+                        <div class="TextBody">Check-out faster by saving a credit/debit card or PayPal to your
+                            account. You’ll be able to order ahead or scan and pay at the register in one step.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+            </div>
+            <div class="COCFlex">
+                <div class="FColumn">
+                    <p class="SStar">
+                        2
+                        <svg class="ImSStar" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960"
+                            width="24">
+                            <path d="m233-80 93-304L80-560h304l96-320 96 320h304L634-384l93 304-247-188L233-80Z" />
+                        </svg>
+                        per dollar
+                    </p>
+                    <p>Add funds in the app</p>
+                </div>
+                <div class="Column">
+                    <div class="Img"> <img class="Pload"
+                            src="https://www.starbucks.com/weblx/images/rewards/ways-to-pay/2A.png" height="158"
+                            width="112">
+                    </div>
+                    <!--  <img class="Preload" src="E:\development\Codecool\block2\TeamThree1vers\SBCard.png">  -->
+                    <div class="PreloadText">
+                        <div class="TextMain">Preload</div>
+                        <div class="TextBody">To save time and earn Stars twice as fast, add money to your
+                            digital Starbucks Card using any payment option. Scan and pay in one step or order ahead in
+                            the app.
+                        </div>
+                    </div>
+                </div>
+                <div class="Column">
+                    <div class="Img"> <img class="Pload"
+                            src="https://www.starbucks.com/weblx/images/rewards/ways-to-pay/2B.png" height="158"
+                            width="112">
+                    </div>
+                    <!--  <img class="Regist" src="E:\development\Codecool\block2\TeamThree1vers\Regist.webp">  -->
+                    <div class="RegisterText">
+                        <div class="TextMain">Register your gift card</div>
+                        <div class="TextBody">Then use it to pay through the app. You can even consolidate
+                            balances from multiple cards in one place.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: Cash or Card-->
+        <section class="section-sixth">
+
+            <div class="outer-wrapper">
+
+                <div class="inner-wrapper">
+
+                    <div class="star-left"><img src="https://www.starbucks.com/app-assets/7997fb008f368630d3ca3c1194fd8404.svg" alt=""></div>
+
+                    <div class="text-center">
+                        <h2>Keep the Rewards Coming</h2>
+                        <p>The Rewards don't stop at your morning coffee. Join Starbucks® Rewards and unlock perks from our partners, all while earning more Stars.</p>
+                        <img src="https://www.starbucks.com/weblx/images/rewards/loyalty-partnerships/delta-skymiles.png" alt="">
+                        <p><a href="#">Link your Delta SkyMiles®</a> and Starbucks® Rewards accounts to earn 1 mile per $1* spent at Starbucks and double Stars on Delta travel days.</p>
+                        <div class="join-rewards-btn"><a href="#">Join Starbucks® Rewards</a></div>
+                    </div>
+
+                    <div class="star-right"><img src="https://www.starbucks.com/app-assets/b7e1b20df72e802cb1cf0e97e8fe21d0.svg" alt=""></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div id="before-footer-section">
+            <div id="questions">
+                <h2>Questions?</h2>
+                <p>We want to help in any way we can. You can ask your barista anytime or we’ve answered the </br> most commonly asked questions <a class="big-grey-link" href="https://customerservice.starbucks.com/sbux"> right over here. </a></p>
+            </div>
+    
+            <div id="big-grey-section">
+                <p>At participating stores. Restrictions apply.</p>
+                <p>* Excludes taxes and gratuities. At participating stores. Some restrictions apply. Flights purchased close to departure may not earn double Stars.</p>
+                <p>Stars and miles may not be earned on purchases of alcohol, Starbucks Cards and Starbucks Card reloads. For details, visit <a class="big-grey-link" href="https://www.deltastarbucks.com/content/starbucks/en/overview.html?mkcpgn=dipd-sbux7042">deltastarbucks.com/terms.</a></p>
+                <div id="big-grey-section-main">
+                    <div id="big-grey-section-left">
+                        <h2 class="big-grey-section-titles">EARNING STARS</h2>
+                        <P>Stars cannot be earned on purchases of alcohol, Starbucks Cards or Starbucks Card reloads.</P>
+                        <P>Earn 1 Star per $1 spent when you scan your member barcode in the app, then pay with cash, credit/debit cards or mobile wallets at participating stores. You can also earn 1 Star per $1 spent when you link a payment method and pay directly through the app.</P>
+                        <P>Earn 2 Stars per $1 spent when you load funds and pay with your digital Starbucks Card in the app. You can also earn 2 Stars per $1 spent when you pay in-person at a participating store with your registered physical Starbucks Card or scan your member barcode in the app, and then use any physical Starbucks Card (regardless of whether it is registered) to complete the purchase.</P>
+    
+                        <h2 class="big-grey-section-titles">BENEFITS</h2>
+                        <p>Free refills available during same in-store visit only. To qualify for the Birthday Reward, you must have made at least one Star-earning transaction</p>
+                    </div>
+    
+                    <div id="big-grey-section-right">
+                        <h2 class="big-grey-section-titles">TERMS OF USE</h2>
+                        <p>For full program details visit <a class="big-grey-link" href="https://www.starbucks.com/rewards/terms/">starbucks.com/rewards/terms.</a></p>
+                        <p>Earn 1 Star per $1 when digitally loading your Starbucks Card with your Starbucks® Rewards Visa® Card: See your Card Rewards Program Agreement for more details.</p>
+                        <p>Starbucks® Rewards benefits are available at participating Starbucks stores. Not all stores have the ability to honor Rewards at this time. Visit the <a class="big-grey-link" href="https://www.starbucks.com/store-locator?map=39.635307,-101.337891,5z"> Starbucks Store Locator</a> and search for locations honoring “Redeem Rewards”.</p>
+                        <p>Deposit and credit card products provided by JPMorgan Chase Bank, N.A. Member FDIC</p>
+    
+                        <h2 class="big-grey-section-titles">REDEEMING REWARDS</h2>
+                        <P>Rewards cannot be redeemed for alcoholic beverages or multi-serve items. You pay the difference for any beverage customization over $1 and/or merchandise item over $20. Not all stores honor tiered Rewards. Select stores redeem 200 Stars for free food or drink items only.</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div id="footer-first-section">
+
+            <div class="footer-columns"> 
+                <h2 class="footer-titles">About Us</h2>
+                <a href="https://www.starbucks.com/about-us/">Our Company</a>
+                <a href="https://www.starbucks.com/coffee/">Our Coffee</a>
+                <a href="https://stories.starbucks.com/">Stories and News</a>
+                <a href="https://archive.starbucks.com/">Starbucks Archive</a>
+                <a href="https://investor.starbucks.com/ir-home/default.aspx">Investor Relations</a>
+                <a href="https://customerservice.starbucks.com/sbux">Costumer Service</a>
+            </div>
+
+            <div class="footer-columns">
+                <h2 class="footer-titles" >Careers</h2>
+                <a href="https://www.starbucks.com/careers/working-at-starbucks/culture-and-values/">Culture and Values</a>
+                <a href="https://stories.starbucks.com/stories/inclusion-diversity/">Inclusion, Diversity, and </br> Equity</a>
+                <a href="https://www.starbucks.com/careers/working-at-starbucks/education/">College Achievement Plan</a>
+                <a href="https://alumni.starbucks.com/login/">Alumni Community</a>
+                <a href="https://www.starbucks.com/careers/">U.S. Careers</a>
+                <a href="https://www.starbucks.com/careers/international-careers/">International Careers</a> 
+            </div>
+
+            <div class="footer-columns">
+                <h2 class="footer-titles">Social Impact</h2>
+                <a href="https://www.starbucks.com/responsibility/people/">People</a>
+                <a href="https://www.starbucks.com/responsibility/planet/">Planet</a>
+                <a href="https://www.starbucks.com/responsibility/reporting-hub/">Environmental and Social </br> Impact Reporting</a>
+            </div>
+            
+            <div class="footer-columns">  
+                <h2 class="footer-titles">For Business Partners</h2>
+                <a href="https://www.starbucks.com/business/landlord-faq/">Landlord Support Center</a>
+                <a href="https://www.starbucks.com/business/suppliers/">Suppliers</a>
+                <a href="https://www.starbuckscardb2b.com/s/">Corporate Gift Card Sales</a>
+                <a href="https://www.nestlecoffeepartnerssl.com/our-brands/we-proudly-serve-starbucks-coffee-program">Office and Foodservice </br> Coffee</a>
+            </div> 
+
+            <div class="footer-columns">
+                <h2 class="footer-titles">Order and Pick Up</h2>
+                <a href="https://www.starbucks.com/rewards/mobile-apps/">Order on the App</a>
+                <a href="https://www.starbucks.com/menu">Order on the Web</a>
+                <a href="https://www.starbucks.com/ways-to-order/delivery/">Delivery</a>
+                <a href="https://www.starbucks.com/ways-to-order/">Order and Pick Up Options</a>
+                <a href="https://athome.starbucks.com/?utm_source=starbucks.com&utm_medium=referral&utm_campaign=footer">Explore and Find Coffee </br> for Home</a>
+            </div>
+
+        </div>
+
+        <div class="footer-second-section">
+            <div class="footer-logos">
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12.01 2.019c-5.495 0-9.991 4.496-9.991 9.991 0 5.494 4.496 9.99 9.991 9.99 5.494 0 9.99-4.496 9.99-9.99 0-5.495-4.446-9.991-9.99-9.991zm4.595 14.436c-.199.299-.549.4-.85.201-2.349-1.45-5.296-1.75-8.793-.951-.348.102-.648-.148-.748-.449-.101-.35.149-.648.45-.749 3.795-.85 7.093-.499 9.69 1.1.35.149.4.548.251.848zm1.2-2.747c-.251.349-.7.499-1.051.249-2.697-1.646-6.792-2.148-9.939-1.148-.398.101-.85-.1-.949-.498-.101-.402.1-.852.499-.952 3.646-1.098 8.143-.548 11.239 1.351.3.149.45.648.201.998zm.099-2.799c-3.197-1.897-8.542-2.097-11.59-1.146a.938.938 0 0 1-1.148-.6.937.937 0 0 1 .599-1.151c3.547-1.049 9.392-.85 13.089 1.351.449.249.599.849.349 1.298-.25.35-.849.498-1.299.248z"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.99 2C6.472 2 2 6.473 2 11.99c0 4.232 2.633 7.85 6.35 9.306-.088-.79-.166-2.006.034-2.868.182-.78 1.172-4.966 1.172-4.966s-.299-.599-.299-1.484c0-1.388.805-2.425 1.808-2.425.853 0 1.264.64 1.264 1.407 0 .858-.546 2.139-.827 3.327-.235.994.499 1.805 1.479 1.805 1.775 0 3.141-1.872 3.141-4.575 0-2.392-1.719-4.064-4.173-4.064-2.843 0-4.512 2.132-4.512 4.335 0 .858.331 1.779.744 2.28a.3.3 0 0 1 .069.286c-.076.315-.245.994-.277 1.133-.044.183-.145.222-.335.134-1.247-.581-2.027-2.405-2.027-3.871 0-3.151 2.289-6.045 6.601-6.045 3.466 0 6.159 2.469 6.159 5.77 0 3.444-2.171 6.213-5.184 6.213-1.013 0-1.964-.525-2.29-1.146l-.623 2.374c-.225.868-.834 1.956-1.241 2.62a10 10 0 0 0 2.958.445c5.517 0 9.99-4.473 9.99-9.99S17.507 2 11.99 2"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path></svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg></a>
+            </div>
+
+
+            <div class="footer-bottom">
+                <a href="https://www.starbucks.com/terms/privacy-policy/">Privacy Notice</a>
+                <a href="https://www.starbucks.com/terms/starbucks-terms-of-use/">Terms of Use</a>
+                <a href="https://www.starbucks.com/personal-information">Do Not Share My Personal Information</a>
+                <a href="https://content-prod-live.cert.starbucks.com/binary/v2/asset/137-70076.pdf">CA Supply Chain Act</a>
+                <a>Cookie Preferences</a>
+                <p>2023 Starbucks Coffee Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="script/script.js"></script>
+</html>
