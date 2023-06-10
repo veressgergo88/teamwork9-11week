@@ -434,13 +434,15 @@ main {
 
 /* Begin: Cash or Card */
 
-.CashOC{
+#CashOc-Wrapper {
     background-color: #f3f1e7;
+}
+
+.CashOC{
     font-family: Arial, Helvetica, sans-serif;
     padding-top:64px;
     padding-bottom:64px;
-    margin-left:auto;
-    margin-right:auto;
+    margin:0 auto;
     padding-left:16px;
     padding-right:16px;
 }
@@ -470,12 +472,10 @@ main {
 .COCFlex{
     
     display:flex;
-    flex-wrap:wrap;
-    flex-direction:row;
+    justify-content: center;
     width:100%;
     flex-basis:100%;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0 auto;
 }
 
 .FColumn{
@@ -583,8 +583,7 @@ main {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    box-shadow: 0 0 15px rgba(0,0,0,0.75);
-    clip-path: inset(0px -15px 0px 0px);
+        clip-path: inset(0px -15px 0px 0px);
   }
   
   .tab {
@@ -702,23 +701,48 @@ main {
 
 #questions {
     color: #000000;
-    padding: 50px 200px 70px;
     line-height: 24px;
+    margin: 0 auto;
+    padding: 64px 0;
 }
 
 #questions h2 {
     font-size: 32px;
+    padding-bottom: 16px;
+}
+
+#questions p {
+    padding-bottom: 16px;
+}
+
+#before-wrapper {
+    background-color: #f3f1e7;
+}
+
+#before-footer-section {
+    margin: 0 auto;
+    max-width: 1440px;
 }
 
 #big-grey-section {
-    background-color: #f3f1e7;
+    padding: 48px 0;
     color: #1e3932;
-    line-height: 24px;
-    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+#big-grey-section p {
+    padding: 8px 0;
 }
 
 .big-grey-section-titles{
     font-size: 16px;
+    font-weight: bold;
+    padding-bottom:16px;
+
+}
+
+.grey-section-padding-bottom{
+    padding-top: 16px;
 }
 
 .big-grey-link {
@@ -727,7 +751,7 @@ main {
 
 #big-grey-section-main{
     display: flex;
-
+    padding-top: 16px; 
 }
 
 #big-grey-section-left{
@@ -736,12 +760,18 @@ main {
 }
 
 #footer-first-section{
+    max-width: 1440px;
     display: flex;
     border-top: 3px  #f3f1e7 solid;
     border-bottom: 3px  #f3f1e7 solid;
-    padding: 20px 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    padding: 48px 0;
+    margin:0 auto;
+}
+
+.footer-second-section{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom:64px;
 }
 
 .footer-columns{
@@ -768,18 +798,22 @@ main {
     color: #1e3932;
 }
 
+.footer-bottom{
+    padding:16px 0;
+}
+
 .footer-bottom a{
     padding-right: 20px;
-    padding-left: 20px;
     border-right: 2px #1e3932 solid;
 }
 
 .footer-bottom p{
+    padding-top: 16px;
     color: #1e3932;
-    padding-left: 20px;
 }
 
 .footer-logos{
+    padding-top:16px;
     display: flex;
 }
 
