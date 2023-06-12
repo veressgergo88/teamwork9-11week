@@ -1,3 +1,15 @@
+window.addEventListener('scroll', function() {
+      let bottomNav = document.getElementById('bottom-nav');
+      let bottomNavPosition = bottomNav.offsetTop;
+
+      if (window.pageYOffset > bottomNavPosition) {
+        bottomNav.classList.add('sticky');
+      } else {
+        bottomNav.classList.remove('sticky');
+      }
+    });
+    
+    
 const tabs = document.querySelectorAll('[data-tab-target]')
 const tabContents = document.querySelectorAll('[data-tab-content]')
 
@@ -14,4 +26,3 @@ tabs.forEach(tab => {
     target.classList.add('active')
   })
 })
-

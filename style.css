@@ -110,6 +110,11 @@ img, picture, svg, video {
     font-weight: bold;
 }
 
+#find-a-store p:hover {
+    color:#008248;
+    cursor: pointer;
+}
+
 #right-navbar-btns {
     align-self: center;
 }
@@ -124,6 +129,10 @@ img, picture, svg, video {
     margin-right: 1rem;
 }
 
+#sign-btn:hover {
+    cursor: pointer;
+}
+
 #join-btn {
     border-radius: 1rem;
     padding: 0.5rem 1rem;
@@ -131,6 +140,10 @@ img, picture, svg, video {
     color:#fff;
     font-size: 14px;
     font-weight: bold;
+}
+
+#join-btn {
+    cursor: pointer;
 }
 
 /*bottom-nav*/
@@ -152,6 +165,12 @@ img, picture, svg, video {
 #bottom-nav p span{
     font-size: 0.6rem;
     vertical-align:super;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width:100%
 }
 
 /*main*/
@@ -200,6 +219,10 @@ main {
     color:#fff;
     font-size: 16px;
     padding: 7px 16px;
+}
+
+#frst-sctn-btn-p button:hover{
+    cursor: pointer;
 }
 
 #frst-sctn-btn-p a {
@@ -305,35 +328,26 @@ main {
 }
 
 .EndlessPossibilities{
-    
     Display:flex;
     flex-wrap:wrap;
     justify-content: center;
     padding-top: 48px;
     flex-basis: 100%;
     margin:auto; 
-    
-    
 }
 
-
-
 .EndlessPossibilities div{
-    max-width: 22.5em;
-
-      
+    max-width: 22.5em;      
 }
 
 
 .FCard {
     margin-right: 24px;
-
 }
 
 .SCard {
     margin-left: 24px;
     margin-right: 24px;
-
 }
 
 .TCard {
@@ -415,19 +429,8 @@ main {
 }   
 
 .Lmbutton:hover {
-    
-    background-color: #FFFF;
-    color: #008248;   
-    border:none;
-    min-width:24px;
-    min-height:24px;  
     cursor: pointer;
-    background-color: #FFFF;
-    border-top: none;
-    border-left:none;
-    border-right:none;
     border-bottom:none;
-    
 }
 
 /* End: Endless */
